@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Personal and Real-Time Data Attributes</title>
+<style>
+body {
+  font-family: Times Newroman;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.data-attribute {
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Personal and Real-Time Data Attributes</h1>
+
+  <div class="data-attribute">
+    <label data-test-id="SlackUserName"><b>Slack Username:</b></label>
+    <label data-test-id="SlackUserName">JOHNA SHIVACHI</label>
+  </div>
+
+  <div class="data-attribute">
+    <label data-test-id="Track"><b>Track: </b></label>
+    <label data-test-id="MyTrack">FRONTEND</label>
+  </div>
+
+  <div class="data-attribute">
+    <img src="E:\pics\blackpanther.png" alt="JOHNA SHIVACHI" data-test-id="SlackDisplayImage">
+  </div>
+
+   <div class="data-attribute">
+    <label data-test-id="githubURL">GitHub Repository Link:</label>
+    <a href="https://vasachi.github.io/hngprojects/">stage1 Task</a>
+  </div>
+
+  <div class="data-attribute">
+   <label data-test-id="CurrentDayOfTheWeek">Current Day of the Week</label>
+    <input type="text" data-test-id="CurrentDayOfTheWeek" id="current-day-of-week" readonly>
+  </div>
+
+<script>
+// Get the current day of the week
+const today = new Date();
+const dayOfWeek = today.toLocaleString();
+
+// Display the current day of the week
+document.getElementById("current-day-of-week").textContent = dayOfWeek;
+</script>
+  
+<div class="data-attribute">
+    <label for="current-time">Current Time:</label>
+    <input type="text" id="current-time" data-test-id="current-time" readonly>
+  </div>
+</div>
+
+<script>
+// Get the current time
+const currentTime = new Date().toLocaleString();
+
+// Set the value of the current time input
+document.getElementById("current-time").value = currentTime;
+</script>
+</body>
+</html>
