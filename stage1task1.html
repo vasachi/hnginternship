@@ -46,6 +46,26 @@ body
  {
   margin-bottom: 10px;
  }
+.picture-frame 
+ {
+      border: 1px solid black;
+      padding: 10px;
+ }
+
+    .picture-frame img
+ {
+      max-width: 100%;
+ }
+
+    .picture-frame img::after 
+ {
+      content: attr(alt);
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: gray;
+ }
 </style>
 </head>
 <body onload="updateCurrentDayAndTime()">
@@ -63,7 +83,7 @@ body
     <label data-test-id="MyTrack">FRONTEND</label>
   </div>
 
-  <div class="data-attribute">
+  <div class="picture-frame">
     <img src="E:\pics\blackpanther.png" data-test-id="SlackDisplayImage" alt="JOHNA SHIVACHI">
   </div>
 
