@@ -1,70 +1,83 @@
 <html>
 <head>
 <title>Personal and Real-Time Data Attributes</title>
-<style>
-body {
-  font-family: Times Newroman;
-}
+<script>
+     //javascript_JS also my intials Johna Shivachi.
+    // Function to get the current day of the week
+    function getCurrentDayOfWeek()
+   {
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const currentDate = new Date();
+      const currentDayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+      return currentDayOfWeek;
+    }
 
-.container {
+    // Function to get the current UTC time
+    function getCurrentUTCTime()
+   {
+      const currentDate = new Date();
+      const currentUTCTime = currentDate.toUTCString();
+      return currentUTCTime;
+    }
+
+    // Function to update the HTML elements with the current day and UTC time
+    function updateCurrentDayAndTime() 
+   {
+      const currentDayElement = document.getElementById('current-day');
+      const currentUTCTimeElement = document.getElementById('current-utc-time');
+
+      currentDayElement.textContent = getCurrentDayOfWeek();
+      currentUTCTimeElement.textContent = getCurrentUTCTime();
+    }
+  </script>
+<style>
+body
+ {
+  font-family: Times Newroman;
+ }
+
+.container 
+ {
   width: 500px;
   margin: 0 auto;
-}
+ }
 
-.data-attribute {
+.data-attribute 
+ {
   margin-bottom: 10px;
-}
+ }
 </style>
 </head>
-<body>
+<body onload="updateCurrentDayAndTime()">
+
 <div class="container">
   <h1>Personal and Real-Time Data Attributes</h1>
 
   <div class="data-attribute">
-    <label data-test-id="SlackUserName"><b>Slack Username:</b></label>
+    <label><b>Slack Username:</b></label>
     <label data-test-id="SlackUserName">JOHNA SHIVACHI</label>
   </div>
 
   <div class="data-attribute">
-    <label data-test-id="Track"><b>Track: </b></label>
+    <label><b>Track: </b></label>
     <label data-test-id="MyTrack">FRONTEND</label>
   </div>
 
   <div class="data-attribute">
-    <img src="E:\pics\blackpanther.png" alt="JOHNA SHIVACHI" data-test-id="SlackDisplayImage">
+    <img src="E:\pics\blackpanther.png" data-test-id="SlackDisplayImage" alt="JOHNA SHIVACHI">
   </div>
 
    <div class="data-attribute">
-    <label data-test-id="githubURL">GitHub Repository Link:</label>
-    <a href="https://vasachi.github.io/hnginternship/stage1task1.html">stage1 Task</a>
+    <label>GitHub Repository Link:</label>
+    <a href="https://github.com/vasachi/hnginternship.git" data-test-id="githubURL">stage1 Task</a>
   </div>
 
-  <div class="data-attribute">
-   <label data-test-id="CurrentDayOfTheWeek">Current Day of the Week</label>
-    <input type="text" data-test-id="CurrentDayOfTheWeek" id="current-day-of-week" readonly>
-  </div>
+  <h1>Current Day and UTC Time</h1>
+  <label>CURRENT DAY OF THE WEEK:</label>     <label id="current-day" data-test-id="CurrentDayOfTheWeek"></label>
 
-<script>
-// Get the current day of the week
-const today = new Date();
-const dayOfWeek = today.toLocaleString();
+<br><br>
 
-// Display the current day of the week
-document.getElementById("current-day-of-week").textContent = dayOfWeek;
-</script>
-  
-<div class="data-attribute">
-    <label for="current-time">Current Time:</label>
-    <input type="text" id="current-time" data-test-id="current-time" readonly>
-  </div>
-</div>
+  <label>CURRENT UTC TIME:</label>            <label id="current-utc-time" data-test-id="CurrentUTCTime"></label>
 
-<script>
-// Get the current time
-const currentTime = new Date().toLocaleString();
-
-// Set the value of the current time input
-document.getElementById("current-time").value = currentTime;
-</script>
 </body>
 </html>
