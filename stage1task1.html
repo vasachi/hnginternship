@@ -13,12 +13,12 @@
     }
 
     // Function to get the current UTC time
-    function getCurrentUTCTime()
-   {
+    function getCurrentUTCTime() {
       const currentDate = new Date();
-      const currentUTCTime = currentDate.toUTCString();
+      const currentUTCTime = currentDate.getTime();
       return currentUTCTime;
     }
+
 
     // Function to update the HTML elements with the current day and UTC time
     function updateCurrentDayAndTime() 
